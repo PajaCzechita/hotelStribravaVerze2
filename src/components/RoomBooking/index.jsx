@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { RoomCard } from "../RoomCard";
 import { RoomDetail } from "../RoomDetail";
+import { Form } from "../Form";
 
 export const RoomBooking = () => {
   const [rooms, setRooms] = useState([]);
@@ -30,6 +31,7 @@ export const RoomBooking = () => {
       <section className="light">
         <div className="container">
           <RoomDetail selectedRoom={selectedRoom} />
+          <Form selectedRoom={selectedRoom} />
         </div>
       </section>
     </>
