@@ -4,15 +4,19 @@ import { RoomDetail } from "../RoomDetail";
 
 export const RoomBooking = () => {
   const [rooms, setRooms] = useState([]);
+  const [selectedRoom, setSelectedRoom] = useState("");
 
   useEffect(() => {
     const fetchRooms = async () => {
       const response = await fetch("http://localhost:4000/api/rooms");
       const responseData = await response.json();
       setRooms(responseData.data);
+      setSelectedRoom(responseData.data[0]);
     };
     fetchRooms();
   }, []);
+
+  console.log("Selected room: ", selectedRoom);
 
   return (
     <>
@@ -25,7 +29,7 @@ export const RoomBooking = () => {
       </section>
       <section className="light">
         <div className="container">
-          <RoomDetail />
+          <RoomDetail selectedRoom={selectedRoom} />
         </div>
       </section>
     </>
