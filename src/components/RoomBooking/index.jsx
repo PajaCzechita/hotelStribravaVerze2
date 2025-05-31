@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { RoomCard } from "../RoomCard";
+import { RoomDetail } from "../RoomDetail";
 
 export const RoomBooking = () => {
   const [rooms, setRooms] = useState([]);
@@ -14,12 +15,19 @@ export const RoomBooking = () => {
   }, []);
 
   return (
-    <section className="dark">
-      <div className="container">
-        <h2>Nase Pokoje</h2>
-        <p>Vyberte si, ktery z nasich pokoju je pro vas ten pravy</p>
-        <RoomCard rooms={rooms} />
-      </div>
-    </section>
+    <>
+      <section className="dark">
+        <div className="container">
+          <h2>Nase Pokoje</h2>
+          <p>Vyberte si, ktery z nasich pokoju je pro vas ten pravy</p>
+          <RoomCard rooms={rooms} />
+        </div>
+      </section>
+      <section className="light">
+        <div className="container">
+          <RoomDetail />
+        </div>
+      </section>
+    </>
   );
 };
