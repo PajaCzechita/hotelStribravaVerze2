@@ -1,5 +1,6 @@
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
+import { RoomBooking } from "../../components/RoomBooking";
 import "./style.css";
 
 export const HomePage = () => {
@@ -9,13 +10,7 @@ export const HomePage = () => {
         <Header />
       </header>
       <main>
-        <p>
-          Startovací šablona pro webovou aplikaci v Reactu. Vytvořeno pomocí{" "}
-          <a href="https://www.npmjs.com/package/create-czechitas-app">
-            create-czechitas-app
-          </a>
-          .
-        </p>
+        <RoomBooking />
       </main>
       <footer>
         <Footer />
