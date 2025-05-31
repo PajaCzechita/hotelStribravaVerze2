@@ -19,13 +19,17 @@ export const RoomBooking = () => {
 
   console.log("Selected room: ", selectedRoom);
 
+  const handleRoomSelection = (roomId) => {
+    setSelectedRoom(rooms[roomId]);
+  };
+
   return (
     <>
       <section className="dark">
         <div className="container">
           <h2>Nase Pokoje</h2>
           <p>Vyberte si, ktery z nasich pokoju je pro vas ten pravy</p>
-          <RoomCard rooms={rooms} />
+          <RoomCard rooms={rooms} onRoomSelection={handleRoomSelection} />
         </div>
       </section>
       <section className="light">
