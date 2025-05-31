@@ -1,3 +1,4 @@
+import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
 import "./style.css";
 
@@ -17,7 +18,7 @@ export const HomePage = () => {
         </p>
       </main>
       <footer>
-        <p>Czechitas, Digitální akademie: Web</p>
+        <Footer />
       </footer>
     </div>
   );
