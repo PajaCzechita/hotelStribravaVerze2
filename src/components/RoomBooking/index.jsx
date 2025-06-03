@@ -17,8 +17,6 @@ export const RoomBooking = () => {
     fetchRooms();
   }, []);
 
-  console.log("Selected room: ", selectedRoom);
-
   const handleRoomSelection = (roomId) => {
     setSelectedRoom(rooms[roomId]);
   };
@@ -34,8 +32,13 @@ export const RoomBooking = () => {
       </section>
       <section className="light">
         <div className="container">
-          <RoomDetail selectedRoom={selectedRoom} />
-          <Form selectedRoom={selectedRoom} />
+          <h2>
+            Pokoj {selectedRoom.name}, {selectedRoom.price} kc na osobu za noc
+          </h2>
+          <div className="columns-2">
+            <RoomDetail selectedRoom={selectedRoom} />
+            <Form selectedRoom={selectedRoom} />
+          </div>
         </div>
       </section>
     </>
